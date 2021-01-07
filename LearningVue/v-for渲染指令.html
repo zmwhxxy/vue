@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-for渲染指令</title>
+		<script type="text/javascript" src="vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			<div style="float: left; width: 10rem;" >
+				<h2>用户列表</h2>
+				<ul>
+					<li v-for="(item, index) in users">{{ index+1 }}.&nbsp;{{ item.name }}</li>
+				</ul>
+			</div>
+			
+			<div style="margin-left: 10.625rem; overflow: hidden;" >
+				<h2>用户列表</h2>
+				<ul>
+					<li v-for="(user, uIndex) of users"> {{ uIndex }}.&nbsp; {{ user.name }} </li>
+				</ul>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			let vm = new Vue({
+				el: '#app',
+				data: () => ({
+					users: [
+						{
+							name: 'Clark',
+							age: 27,
+							city: 'Chicago',
+						},
+						{
+							name: 'Jackson',
+							age: 28,
+							city: 'Sydney',
+						},
+					]
+				}),
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-for渲染对象的键值对</title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+	<body>
+		<div id="app">
+			<h2>对象键值对</h2>
+			<ul>
+				<li v-for="(user, index) in users">
+					用户{{ index + 1 }}：
+					<ul>
+						<li v-for="(value, key) of user">{{ key }}:&nbsp;{{ value }}</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			let vm = new Vue({
+				el: '#app',
+				data: () => ({
+					users: [
+						{
+							name: 'Loe',
+							age: 18,
+							city: 'NewYok'
+						},
+						{
+							name: 'Jom',
+							age: 23,
+							city: 'Seadny'
+						},
+						{
+							name: 'Smith',
+							age: 35,
+							city: 'London'
+						}
+					]
+				}),
+			})
+		</script>
+	</body>
+	
+</html>
